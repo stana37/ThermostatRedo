@@ -57,7 +57,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- The ActionBar displayed at the top -->
 
         <!-- The main content view where fragments are loaded -->
         <FrameLayout

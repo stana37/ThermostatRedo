@@ -21,9 +21,6 @@ import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
-//import com.triggertrap.seekarc.SeekArc;
-
-
 public class Homepage extends Fragment {
     TextView targetTemp;
     TextView currentTime;
@@ -34,16 +31,16 @@ public class Homepage extends Fragment {
     SeekArc seekArc;
     boolean seekArcIsBeingTouched = false;
     double arcTemp;
-    TimerTask task; 
+    TimerTask task;
     long clockDelay = 200;
 
-    static boolean useSchedule;
+     static boolean useSchedule = false;
 
-    android.widget.Switch useSwitch;
+     static android.widget.ToggleButton useSwitch;
 
     TimerTask uiUpdateTask;
 
-    static boolean upcomingChangesVisible = true;
+    static boolean upcomingChangesVisible;
     ImageView noSchedule;
 
     ImageView iv_icon0;
@@ -70,27 +67,14 @@ public class Homepage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.homepage, container, false);
-
-        //importing current temperature text
         targetTemp = (TextView)view.findViewById(R.id.targetTemp);
-
-        //importing current time
         currentTime = (TextView)view.findViewById(R.id.currentTime);
-
-        //importing current temp
         currentTemp = (TextView) view.findViewById(R.id.currentTemp);
-
-        //importing current day
         currentDay = (TextView) view.findViewById(R.id.currentDay);
-
-        //import down button
         imageButtonDown = (ImageButton) view.findViewById(R.id.imageButtonDown);
-
-        //import up button
         imageButtonUp = (ImageButton) view.findViewById(R.id.imageButtonUp);
 
-        //import all the images and textviews for the upcoming changes
-        //the first icons and texts
+
         iv_icon0 = (ImageView) view.findViewById(R.id.iv_icon0);
         txt_name0 = (TextView) view.findViewById(R.id.txt_name0);
         iv_icon1 = (ImageView) view.findViewById(R.id.iv_icon1);
@@ -98,7 +82,6 @@ public class Homepage extends Fragment {
         iv_icon2 = (ImageView) view.findViewById(R.id.iv_icon2);
         txt_name2 = (TextView) view.findViewById(R.id.txt_name2);
 
-        //the second icons and texts
         iv_icon00 = (ImageView) view.findViewById(R.id.iv_icon00);
         txt_name00 = (TextView) view.findViewById(R.id.txt_name00);
         iv_icon11 = (ImageView) view.findViewById(R.id.iv_icon11);
@@ -121,9 +104,7 @@ public class Homepage extends Fragment {
 
 
         noSchedule = (ImageView) view.findViewById(R.id.noSchedule);
-
-
-        useSwitch = (android.widget.Switch) view.findViewById(R.id.useScheduleSwitch);
+        useSwitch = (android.widget.ToggleButton) view.findViewById(R.id.ToggleButton);
 
 
         useSwitch.setOnClickListener(new View.OnClickListener() {
@@ -131,13 +112,14 @@ public class Homepage extends Fragment {
             public void onClick(View v) {
                 if (useSchedule) {
                     useSchedule = false;
-                    Homepage.setUpcomingChangesListVisible(false);
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
                             try {
                                 HeatingSystem.put("weekProgramState", "off");
-
+                                useSwitch.setChecked(false);
+                                setUpcomingChangesListVisible(false);
                             } catch (Exception e) {
                                 System.err.println("Error from getdata "+e);
                             }
@@ -145,12 +127,15 @@ public class Homepage extends Fragment {
                     }).start();
                 } else {
                     useSchedule = true;
-                    Homepage.setUpcomingChangesListVisible(true);
+
+
                     new Thread(new Runnable() {
                         @Override
                         public void run() {
                             try {
                                 HeatingSystem.put("weekProgramState", "on");
+                                useSwitch.setChecked(true);
+                                setUpcomingChangesListVisible(true);
                             } catch (Exception e) {
                                 System.err.println("Error from getdata "+e);
                             }
@@ -161,28 +146,24 @@ public class Homepage extends Fragment {
         });
 
 
-        //run the thread every clockDelay
         task = new TimerTask() {
             @Override
             public void run() {
-
-                //THIS IS HOW YOU GET DATA FROM THE WEEKPROGRAM ON THE SERVER AND DO SOMETHING WITH IT
                 new Thread(new Runnable() {
                     @Override
                     public void run() {
                         try {
-                            //getting it from the server
                             WeekProgram weekProgram = HeatingSystem.getWeekProgram();
 
                             ArrayList<Switch> todaysSwitches = weekProgram.data.get(time.getDayString());
                             ArrayList<Switch> tomorrowsSwitches = weekProgram.data.get(time.getTomorrowString());
-                            //todaysSwitches.add(new Switch("day", true, "22:00"));
-                            //todaysSwitches.add(new Switch("night", true, "23:00"));
+
 
                             final ArrayList<Integer> icons = new ArrayList<Integer>();
                             final ArrayList<Integer> icons2 = new ArrayList<Integer>();
                             final ArrayList<String> texts = new ArrayList<String>();
                             final ArrayList<String> texts2 = new ArrayList<String>();
+
 
                             //putting all the correct texts and icons in the arraylists of today
                             if (!todaysSwitches.isEmpty()) {
@@ -287,7 +268,7 @@ public class Homepage extends Fragment {
                                                 textViews.get(i).setText("");
                                                 textViews1.get(i).setText("");
                                             }
-                                            textViews.get(1).setText("There currently are no upcoming changes");
+                                            textViews.get(1).setText("No upcoming changes");
                                         }
                                     } else {
                                         for (int i=0; i<3; i++) {
@@ -351,8 +332,8 @@ public class Homepage extends Fragment {
         seekArc.setProgressWidth(50);
         seekArc.setRoundedEdges(true);
 
-        String cold = "#448aff";
-        String hot = "#d32f2f";
+        String cold = "#6495ED";
+        String hot = "#6495ED";
         String midStr = "0";
 
         StringBuilder result = new StringBuilder("#");
@@ -392,8 +373,8 @@ public class Homepage extends Fragment {
 
 
 
-                String cold = "#448aff";
-                String hot = "#d32f2f";
+                String cold = "#6495ED";
+                String hot = "#6495ED";
                 String midStr = "0";
 
                 StringBuilder result = new StringBuilder("#");
@@ -498,16 +479,13 @@ public class Homepage extends Fragment {
                     @Override
                     public void run() {
                         if (useSchedule) {
-                            if (!useSwitch.isChecked()) {
-                                useSwitch.setChecked(true);
-                                Homepage.setUpcomingChangesListVisible(true);
+                            if (useSwitch.isChecked()) {
+                                setUpcomingChangesListVisible(true);
 
                             }
                         } else if (!useSchedule){
-                            if (useSwitch.isChecked()) {
-                                useSwitch.setChecked(false);
-                                Homepage.setUpcomingChangesListVisible(false);
-
+                            if (!useSwitch.isChecked()) {
+                                setUpcomingChangesListVisible(false);
                             }
                         }
                     }
@@ -532,8 +510,8 @@ public class Homepage extends Fragment {
 
 
         return view;
-        
-        
+
+
     }
 
 

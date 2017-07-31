@@ -27,25 +27,25 @@ public final class R {
 		public static final int superlv_mainLayoutID = 0x7f01013b;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020050;
+		public static final int ic_launcher = 0x7f02004e;
 	}
 	public static final class id {
-		public static final int empty = 0x7f0c00cf;
-		public static final int insideInset = 0x7f0c003a;
-		public static final int insideOverlay = 0x7f0c003b;
-		public static final int more_progress = 0x7f0c00d0;
-		public static final int outsideInset = 0x7f0c003c;
-		public static final int outsideOverlay = 0x7f0c003d;
-		public static final int ptr_layout = 0x7f0c00ce;
+		public static final int empty = 0x7f0b00cb;
+		public static final int insideInset = 0x7f0b003a;
+		public static final int insideOverlay = 0x7f0b003b;
+		public static final int more_progress = 0x7f0b00cc;
+		public static final int outsideInset = 0x7f0b003c;
+		public static final int outsideOverlay = 0x7f0b003d;
+		public static final int ptr_layout = 0x7f0b00ca;
 	}
 	public static final class layout {
-		public static final int view_more_progress = 0x7f04003c;
-		public static final int view_progress = 0x7f04003d;
-		public static final int view_progress_gridview = 0x7f04003e;
-		public static final int view_progress_listview = 0x7f04003f;
+		public static final int view_more_progress = 0x7f03003a;
+		public static final int view_progress = 0x7f03003b;
+		public static final int view_progress_gridview = 0x7f03003c;
+		public static final int view_progress_listview = 0x7f03003d;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f060014;
+		public static final int app_name = 0x7f050014;
 	}
 	public static final class styleable {
 		public static final int[] supergridview = { 0x7f01012b, 0x7f01012c, 0x7f01012d };

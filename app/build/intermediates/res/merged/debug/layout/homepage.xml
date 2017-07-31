@@ -123,18 +123,6 @@
         android:layout_marginRight="@dimen/activity_horizontal_margin"
         android:layout_marginBottom="@dimen/activity_horizontal_margin">
 
-        <TextView
-            android:id="@+id/header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="top"
-            android:text="@string/upcoming_temp_changes"
-            android:textSize="20dp"
-            android:textAlignment="center"
-            android:layout_above="@+id/upcomingChangesList"/>
-
-
-
         <ImageView
             android:id="@+id/noSchedule"
             android:src="@drawable/noschedule"
@@ -162,6 +150,27 @@
             android:layout_gravity="bottom"
             android:focusableInTouchMode="false" />
 
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/upcomingChangesList"
+            android:layout_gravity="left"
+            android:text="@string/upcoming_temp_changes"
+            android:textSize="20dp" />
+
+        <ToggleButton
+            android:id="@+id/ToggleButton"
+            style="@android:style/Widget.Material.Button.Toggle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/card_view"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right"
+            android:checked="false"
+            android:minWidth="60dp"
+            android:text="Use Schedule"
+            android:textAppearance="@style/TextAppearance.AppCompat.Caption" />
 
 
     </android.support.v7.widget.CardView>
@@ -192,28 +201,6 @@
         android:layout_alignTop="@+id/imageButtonUp"
         android:layout_alignStart="@+id/card_view1" />
 
-    <android.support.v7.widget.CardView
-        android:id="@+id/card_view3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        card_view:cardElevation="1dp"
-        android:layout_alignParentRight="true"
-        >
-
-
-        <Switch
-            android:id="@+id/useScheduleSwitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/imageButtonUp"
-            android:layout_centerHorizontal="true"
-            android:splitTrack="false"
-            android:textAppearance="?android:attr/textAppearanceSmallPopupMenu"
-            android:textColor="@color/colorTextSecondary"
-            android:text="Use Schedule"
-            seekarc:checked="false" />
-
-    </android.support.v7.widget.CardView>
 
 </RelativeLayout>
 

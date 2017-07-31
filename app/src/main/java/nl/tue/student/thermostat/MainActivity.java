@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         tabLayout = (TabLayout) findViewById(R.id.tabLayout);
 
         //Adding the tabs using addTab() method
-        tabLayout.addTab(tabLayout.newTab().setText("Homepage"));
+        tabLayout.addTab(tabLayout.newTab().setText("Thermostat"));
         tabLayout.addTab(tabLayout.newTab().setText("Schedule"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
         //Adding onTabSelectedListener to swipe views
         tabLayout.setOnTabSelectedListener(this);
 
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
+        //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                //, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        //drawer.setDrawerListener(toggle);
+        //toggle.syncState();
 
-        navigationView = (NavigationView) findViewById(R.id.nvView);
+        //navigationView = (NavigationView) findViewById(R.id.nvView);
 
         secondaryThread = new Thread(new Runnable() {
             @Override
@@ -126,11 +126,13 @@ public class MainActivity extends AppCompatActivity implements TabLayout.OnTabSe
                     String getParam;
                     getParam = HeatingSystem.get("weekProgramState");
                     if (getParam.equals("on")) {
-                        useSchedule = true;
-                        Homepage.setUpcomingChangesListVisible(true);
+                        Homepage.upcomingChangesVisible = true;
+                        Homepage.useSwitch.setChecked(true);
+                        Homepage.useSchedule = true;
+
                     } else if (getParam.equals("off")){
-                        useSchedule = false;
-                        Homepage.setUpcomingChangesListVisible(false);
+                        Homepage.upcomingChangesVisible = false;
+                        Homepage.useSwitch.setChecked(false);
                     }
                     secondaryThread.wait();
                 } catch (Exception e) {

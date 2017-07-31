@@ -34,10 +34,10 @@
     <color name="cardview_light_background">#FFFAFAFA</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
-    <color name="colorAccent">#448aff</color>
+    <color name="colorAccent">#fff651</color>
     <color name="colorDevider">#b6b6b6</color>
-    <color name="colorPrimary">#f44336</color>
-    <color name="colorPrimaryDark">#d32f2f</color>
+    <color name="colorPrimary">#51a9e8</color>
+    <color name="colorPrimaryDark">#36719b</color>
     <color name="colorPrimaryLight">#ffcdd2</color>
     <color name="colorTextIcons">#ffffff</color>
     <color name="colorTextPrimary">#212121</color>
@@ -291,7 +291,7 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="app_name">Thermostat</string>
+    <string name="app_name"/>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -299,7 +299,7 @@
     <string name="schedule">Click on a day to see the schedule</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <string name="title_activity_monday">Monday</string>
-    <string name="upcoming_temp_changes">Upcoming Changes</string>
+    <string name="upcoming_temp_changes">Today\'s Switches</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>

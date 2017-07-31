@@ -36,12 +36,12 @@
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#fff651</color>
     <color name="colorDevider">#b6b6b6</color>
-    <color name="colorPrimary">#51a9e8</color>
-    <color name="colorPrimaryDark">#36719b</color>
-    <color name="colorPrimaryLight">#ffcdd2</color>
+    <color name="colorPrimary">#A86F22</color>
+    <color name="colorPrimaryDark">#216289</color>
+    <color name="colorPrimaryLight">#ffffff</color>
     <color name="colorTextIcons">#ffffff</color>
-    <color name="colorTextPrimary">#212121</color>
-    <color name="colorTextSecondary">#727272</color>
+    <color name="colorTextPrimary">#FFDEB2</color>
+    <color name="colorTextSecondary">#FFDEB2</color>
     <color name="default_blue_light">#ff33b5e5</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
     <color name="design_fab_shadow_mid_color">#14000000</color>

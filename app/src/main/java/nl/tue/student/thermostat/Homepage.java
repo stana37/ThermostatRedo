@@ -332,8 +332,8 @@ public class Homepage extends Fragment {
         seekArc.setProgressWidth(50);
         seekArc.setRoundedEdges(true);
 
-        String cold = "#6495ED";
-        String hot = "#6495ED";
+        String cold = "#674F22";
+        String hot = "#674F22";
         String midStr = "0";
 
         StringBuilder result = new StringBuilder("#");
@@ -373,8 +373,8 @@ public class Homepage extends Fragment {
 
 
 
-                String cold = "#6495ED";
-                String hot = "#6495ED";
+                String cold = "#674F22";
+                String hot = "#674F22";
                 String midStr = "0";
 
                 StringBuilder result = new StringBuilder("#");

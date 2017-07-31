@@ -29788,14 +29788,7 @@
                     "endOffset": 2774
                 },
                 "from": {
-                    "file": "C:\\Users\\Stan\\Desktop\\new\\app\\src\\main\\res\\values\\colors.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 159,
-                        "endColumn": 50,
-                        "endOffset": 205
-                    }
+                    "file": "C:\\Users\\Stan\\Desktop\\new\\app\\src\\main\\res\\values\\colors.xml"
                 }
             },
             {

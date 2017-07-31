@@ -1,23 +1,9 @@
 package nl.tue.student.thermostat;
 
-/**
- * Created by LyoubomirKatzarov on 6/18/2016.
- */
 
 import android.content.Context;
-import android.os.Handler;
-import android.text.InputFilter;
-import android.text.InputType;
-import android.text.Spanned;
-import android.text.method.NumberKeyListener;
 import android.util.AttributeSet;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
-import android.view.View.OnLongClickListener;
-import android.widget.TextView;
-import android.widget.LinearLayout;
 import android.widget.EditText;
 import android.graphics.Color;
 

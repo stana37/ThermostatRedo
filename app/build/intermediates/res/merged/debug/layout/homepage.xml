@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:seekarc="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="#DB993F">
+    android:background="#dbd8d8">
 
 
     <android.support.v7.widget.CardView
@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         card_view:cardElevation="1dp"
-        card_view:cardBackgroundColor="#FFAC3D"
+        card_view:cardBackgroundColor="#ffffff"
         android:layout_centerHorizontal="true"
         android:layout_above="@+id/card_view"
         android:layout_marginTop="5dp"
@@ -117,7 +117,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         card_view:cardElevation="2dp"
-        card_view:cardBackgroundColor="#FFAC3D"
+        card_view:cardBackgroundColor="#ffffff"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"

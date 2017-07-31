@@ -373,8 +373,8 @@ public class Homepage extends Fragment {
 
 
 
-                String cold = "#674F22";
-                String hot = "#674F22";
+                String cold = "#3a87bf";
+                String hot = "#3a87bf";
                 String midStr = "0";
 
                 StringBuilder result = new StringBuilder("#");
